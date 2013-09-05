@@ -1,0 +1,359 @@
+Question 1 Testing
+==================
+
+The following test cases the descriptions of question 1.
+The tests check for true and false values as well as queries of certain procedures.
+
+All these tests return the proper values.
+
+1 ?- father(X, fred).
+X = pierre.
+
+2 ?- father(pierre, X).
+X = fred ;
+X = julien.
+
+3 ?- father(pierre, fred).
+true.
+
+4 ?- father(pierre, julien).
+true.
+
+5 ?- mother(X, fred).
+X = johanne .
+
+6 ?- mother(johanne, X).
+X = fred ;
+X = julien.
+
+7 ?- mother(johanne, fred).
+true.
+
+8 ?- mother(johanne, julien).
+true.
+
+9 ?- father(pierre, keven).
+false.
+
+10 ?- mother(johanne, sophie).
+false.
+
+11 ?- male(fred).
+true.
+
+12 ?- male(johanne).
+false.
+
+13 ?- male(pierre).
+true.
+
+14 ?- female(johanne).
+true.
+
+15 ?- female(pierre).
+false.
+
+16 ?- parent(X, fred).
+X = pierre ;
+X = johanne.
+
+17 ?- parent(pierre, X).
+X = fred ;
+X = julien.
+
+18 ?- parent(pierre, fred).
+true .
+
+19 ?- parent(pierre, julien).
+true.
+
+20 ?- difference(fred, fred).
+false.
+
+21 ?- difference(fred, julien).
+true.
+
+22 ?- married(pierre, johanne).
+true.
+
+23 ?- married(pierre, X).
+X = johanne.
+
+24 ?- married(X, johanne).
+X = pierre.
+
+25 ?- is_father(pierre).
+true .
+
+26 ?- is_father(johanne).
+false.
+
+27 ?- is_mother(pierre).
+false.
+
+28 ?- is_mother(johanne).
+true .
+
+29 ?- aunt(linda, fred).
+true .
+
+30 ?- aunt(X, fred).
+X = linda ;
+X = chantal ;
+false.
+
+31 ?- aunt(X, julien).
+X = linda ;
+X = chantal ;
+false.
+
+32 ?- aunt(linda, X).
+X = fred ;
+X = julien ;
+X = patrick ;
+X = sophie ;
+X = nicolas ;
+false.
+
+33 ?- uncle(daniel, fred).
+true .
+
+34 ?- uncle(daniel, julien).
+true .
+
+35 ?- uncle(X, fred).
+X = daniel ;
+X = stephane ;
+X = jack ;
+false.
+
+36 ?- uncle(daniel, X).
+X = fred ;
+X = julien ;
+X = keven ;
+X = sophie ;
+X = nicolas ;
+false.
+
+37 ?- sister_of(sophie, nicolas).
+true .
+
+38 ?- sister_of(johanne, daniel).
+true .
+
+39 ?- sister_of(johanne, X).
+X = daniel ;
+X = linda ;
+X = stephane ;
+false.
+
+40 ?- sister_of(X, daniel).
+X = johanne ;
+X = linda ;
+false.
+
+41 ?- sister_of(fred, julien).
+false.
+
+42 ?- aunt(johanne, fred).
+false.
+
+43 ?- uncle(pierre, fred).
+false
+
+44 ?- grandfather_of(antoine, fred).
+true .
+
+45 ?- father(antoine, pierre).
+true .
+
+46 ?- grandfather_of(gilles, fred).
+true .
+
+47 ?- grandfather_of(pierre, fred).
+false.
+
+48 ?- grandfather_of(X, fred).
+X = antoine ;
+X = gilles ;
+false.
+
+49 ?- grandfather_of(gilles, X).
+X = fred ;
+X = julien ;
+X = patrick ;
+X = keven ;
+X = sophie ;
+X = nicolas.
+
+50 ?- grandmother)of(therese, fred).
+true .
+
+51 ?- grandmother_of(gisele, fred).
+true .
+
+52 ?- grandmother_of(johanne, fred).
+false .
+
+53 ?- grandmother_of(therese, X).
+X = fred ;
+X = julien ;
+X = patrick ;
+X = keven ;
+X = sophie ;
+X = nicolas.
+
+54 ?- grandmother_of(X, fred).
+X = therese ;
+X = gisele ;
+false.
+
+55 ?- grandmother_of(gisele, julien).
+true.
+
+56 ?- grandchild(julien, antoine).
+true .
+
+57 ?- grandchild(fred, gilles).
+true .
+
+58 ?- grandchild(X, gilles).
+X = fred ;
+X = julien ;
+X = patrick ;
+X = keven ;
+X = sophie ;
+X = nicolas ;
+false.
+
+59 ?- grandchild(fred, X).
+X = antoine ;
+X = gilles ;
+X = therese ;
+X = gisele ;
+false.
+
+60 ?- sibling(fred, julien).
+true .
+
+61 ?- sibling(daniel, johanne).
+true .
+
+62 ?- sibling(johanne, fred).
+false.
+
+63 ?- sibling(johanne, X).
+X = daniel ;
+X = linda ;
+X = stephane ;
+false.
+
+64 ?- sibling(X, daniel).
+X = johanne ;
+X = linda ;
+X = stephane ;
+false.
+
+65 ?- half_sibling(valerie, junior).
+true .
+
+66 ?- half_sibling(fred, julien).
+false.
+
+67 ?- half_sibling(X, valerie).
+X = junior ;
+false.
+
+68 ?- related(fred, julien).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+69 ?- related(fred, keven).
+true .
+
+70 ?- related(pierre, fred).
+true .
+
+71 ?- related(antoine, gilles).
+false.
+
+72 ?- ancestor(antoine, fred).
+true .
+
+73 ?- ancestor(fred, pierre).
+false.
+
+74 ?- ancestor(X, fred).
+X = pierre ;
+X = johanne ;
+X = antoine ;
+X = gisele ;
+X = therese ;
+X = gilles ;
+false.
+
+75 ?- ancestor(gilles, X).
+X = johanne ;
+X = daniel ;
+X = linda ;
+X = stephane ;
+X = fred ;
+X = julien ;
+X = patrick ;
+X = keven ;
+X = sophie ;
+X = nicolas ;
+false.
+
+76 ?- descendent(fred, pierre).
+true .
+
+77 ?- descendent(fred, antoine).
+true .
+
+78 ?- descendent(fred, X).
+X = pierre ;
+X = johanne ;
+X = antoine ;
+X = gisele ;
+X = therese ;
+X = gilles ;
+false.
+
+79 ?- descendent(X, therese).
+X = johanne ;
+X = daniel ;
+X = linda ;
+X = stephane ;
+X = fred ;
+X = julien ;
+X = patrick ;
+X = keven ;
+X = sophie ;
+X = nicolas ;
+false.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

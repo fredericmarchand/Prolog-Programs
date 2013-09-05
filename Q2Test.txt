@@ -1,0 +1,82 @@
+Question 2 Testing
+==================
+
+The following test question 2.
+The tests check if all disks properly make it from left 
+disk to right disk and end up in the same order in the pile.
+
+All these tests output the proper values.
+
+Tests for 2, 3, 4 or 5 disk pile.
+
+
+1 ?- move(2, left, middle, right).
+Move top disk from left to right
+Move top disk from left to middle
+Move top disk from right to middle
+true .
+
+
+2 ?- move(3, left, middle, right).
+Move top disk from left to middle
+Move top disk from left to right
+Move top disk from middle to right
+Move top disk from left to middle
+Move top disk from right to left
+Move top disk from right to middle
+Move top disk from left to middle
+true .
+
+
+3 ?- move(4, left, middle, right).
+Move top disk from left to right
+Move top disk from left to middle
+Move top disk from right to middle
+Move top disk from left to right
+Move top disk from middle to left
+Move top disk from middle to right
+Move top disk from left to right
+Move top disk from left to middle
+Move top disk from right to middle
+Move top disk from right to left
+Move top disk from middle to left
+Move top disk from right to middle
+Move top disk from left to right
+Move top disk from left to middle
+Move top disk from right to middle
+true .
+
+
+4 ?- move(5, left, middle, right).
+Move top disk from left to middle
+Move top disk from left to right
+Move top disk from middle to right
+Move top disk from left to middle
+Move top disk from right to left
+Move top disk from right to middle
+Move top disk from left to middle
+Move top disk from left to right
+Move top disk from middle to right
+Move top disk from middle to left
+Move top disk from right to left
+Move top disk from middle to right
+Move top disk from left to middle
+Move top disk from left to right
+Move top disk from middle to right
+Move top disk from left to middle
+Move top disk from right to left
+Move top disk from right to middle
+Move top disk from left to middle
+Move top disk from right to left
+Move top disk from middle to right
+Move top disk from middle to left
+Move top disk from right to left
+Move top disk from right to middle
+Move top disk from left to middle
+Move top disk from left to right
+Move top disk from middle to right
+Move top disk from left to middle
+Move top disk from right to left
+Move top disk from right to middle
+Move top disk from left to middle
+true .

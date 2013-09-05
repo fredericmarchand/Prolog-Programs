@@ -1,0 +1,116 @@
+Question 4 Testing
+==================
+
+The following test question 4.
+The tests check if the procedures output the proper values
+
+All these tests output the proper values.
+Empty list cases are tested as well as longer lists and cases in between.
+
+
+a)
+
+1 ?- append([a, b], [c, d], L).
+L = [a, b, c, d].
+
+2 ?- append([a, b, c, d, e, f, g], [c, d, g, d, a, d, c, derp], L).
+L = [a, b, c, d, e, f, g, c, d|...].
+
+3 ?- append([a, b, c, g], [c, d, g, d, c, derp], L).
+L = [a, b, c, g, c, d, g, d, c|...].
+
+4 ?- append([a, b, c, g], [c, c, derp], L).
+L = [a, b, c, g, c, c, derp].
+
+5 ?- append([a, b, c, g], [], L).
+L = [a, b, c, g].
+
+6 ?- append([], [g, h, d, a], L).
+L = [g, h, d, a].
+
+
+b)
+
+7 ?- last_with_append(1, [a, b, t, e, g, 1]).
+true .
+
+8 ?- last_with_append(X, [a, b, t, e, g, 1]).
+X = 1 .
+
+9 ?- last_with_append(X, [a, b, t, e]).
+X = e .
+
+10 ?- last_with_append(X, []).
+false.
+
+11 ?- last_with_append(X, [2]).
+X = 2 .
+
+12 ?- last_with_append(2, [2]).
+true .
+
+13 ?- last_with_append(2, []).
+false.
+
+
+c) **This returns true is the two elements are next to each other in 
+   it doesn't matter if it is left right or right left
+   However is we only want one way (left, right) I can simply remove the
+   or clause in the procedure**
+
+14 ?- nextto_with_append(a, b, [a, b, c, d]).
+true .
+
+15 ?- nextto_with_append(a, c, [a, b, c, d]).
+false.
+
+16 ?- nextto_with_append(b, a, [a, b, c, d]).
+true .
+
+17 ?- nextto_with_append(b, a, [a, b]).
+true .
+
+18 ?- nextto_with_append(a, b, []).
+false.
+
+19 ?- nextto_with_append(a, X, [a, b, c, d, a, e]).
+X = b ;
+X = e ;
+X = d ;
+false.
+
+
+d)
+
+20 ?- reverse([a, b, c, d, e, g], L).
+L = [g, e, d, c, b, a].
+
+21 ?- reverse([a, b, c], L).
+L = [c, b, a].
+
+22 ?- reverse([a], L).
+L = [a].
+
+23 ?- reverse([], L).
+L = [].
+
+24 ?- reverse([6, 5, 4, 3, 2, 1, 0], L).
+L = [0, 1, 2, 3, 4, 5, 6].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

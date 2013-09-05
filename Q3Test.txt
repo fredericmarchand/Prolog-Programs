@@ -1,0 +1,89 @@
+Question 3 Testing
+==================
+
+The following test question 3.
+The tests check if the procedures output the proper values
+
+All these tests output the proper values.
+
+a)
+
+1 ?- list_last(X, []).
+false.
+
+2 ?- list_last(X, [1, 2, 3, 4, 5]).
+X = 5 .
+
+3 ?- list_last(X, [1]).
+X = 1 .
+
+4 ?- list_last(X, [a, b, c, s, d, h, y, a, c]).
+X = c .
+
+5 ?- list_last(X, [how, are, you]).
+X = you .
+
+b)
+
+6 ?- after(a, [b, a, x, d, a, f, g], R).
+R = [x, d, a, f, g] ;
+R = [f, g] ;
+false.
+
+7 ?- after(a, [], R).
+false.
+
+8 ?- after(a, [a, b, c], R).
+R = [b, c] ;
+false.
+
+c)
+
+9 ?- nextto_redefined(a, b, [c, a, b, d]).
+true .
+
+10 ?- nextto_redefined(a, b, [c, a, d, b]).
+false.
+
+11 ?- nextto_redefined(a, b, []).
+false.
+
+d)
+
+12 ?- occurs_at_position(x, [a, b, c, x, x, d, e], 5).
+true .
+
+13 ?- occurs_at_position(x, [a, b, c, x, x, d, e], Pos).
+Pos = 4 ;
+Pos = 5 ;
+false.
+
+14 ?- occurs_at_position(x, [], Pos).
+false.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+Question 5 Testing
+==================
+
+The following test question 5.
+The tests check if the procedures output the proper values
+
+All these tests output the proper values.
+
+a)
+
+1 ?- travel(valmont, raglan).
+true .
+
+2 ?- travel(losAngeles, auckland).
+true .
+
+3 ?- travel(bangkok, losAngeles).
+false.
+
+4 ?- travel(frankfurt, X).
+X = bangkok ;
+X = singapore ;
+X = auckland ;
+X = hamilton ;
+X = raglan ;
+X = auckland ;
+X = hamilton ;
+X = raglan ;
+false.
+
+5 ?- travel(X, losAngeles).
+X = paris ;
+X = valmont ;
+X = valmont ;
+X = metz ;
+X = saarbruecken ;
+false.
+
+
+b) and c)
+
+6 ?- travel(valmont, losAngeles, X).
+X = go(valmont, saarbruecken, byCar, go(saarbruecken, paris, byTrain, go(paris, losAngeles, byPlane))) ;
+
+X = go(valmont, metz, byCar, go(metz, paris, byTrain, go(paris, losAngeles, byPlane))) ;
+false.
+
+7 ?- travel(valmont, raglan, X).
+X = go(valmont, saarbruecken, byCar, go(saarbruecken, frankfurt, byTrain, go(frankfurt, bangkok, byPlane, go(bangkok, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))))) ;
+
+X = go(valmont, saarbruecken, byCar, go(saarbruecken, frankfurt, byTrain, go(frankfurt, singapore, byPlane, go(singapore, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))))) ;
+
+X = go(valmont, saarbruecken, byCar, go(saarbruecken, paris, byTrain, go(paris, losAngeles, byPlane, go(losAngeles, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))))) ;
+
+X = go(valmont, metz, byCar, go(metz, frankfurt, byTrain, go(frankfurt, bangkok, byPlane, go(bangkok, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))))) ;
+
+X = go(valmont, metz, byCar, go(metz, frankfurt, byTrain, go(frankfurt, singapore, byPlane, go(singapore, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))))) ;
+
+X = go(valmont, metz, byCar, go(metz, paris, byTrain, go(paris, losAngeles, byPlane, go(losAngeles, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))))) ;
+false.
+
+8 ?- travel(metz, paris, X).
+X = go(metz, paris, byTrain) ;
+false.
+
+9 ?- 
+|    travel(frankfurt, Y, X).
+Y = bangkok,
+X = go(frankfurt, bangkok, byPlane) ;
+
+Y = singapore,
+X = go(frankfurt, singapore, byPlane) ;
+
+Y = auckland,
+X = go(frankfurt, bangkok, byPlane, go(bangkok, auckland, byPlane)) ;
+
+Y = hamilton,
+X = go(frankfurt, bangkok, byPlane, go(bangkok, auckland, byPlane, go(auckland, hamilton, byCar))) ;
+
+Y = raglan,
+X = go(frankfurt, bangkok, byPlane, go(bangkok, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))) ;
+
+Y = auckland,
+X = go(frankfurt, singapore, byPlane, go(singapore, auckland, byPlane)) ;
+
+Y = hamilton,
+X = go(frankfurt, singapore, byPlane, go(singapore, auckland, byPlane, go(auckland, hamilton, byCar))) ;
+
+Y = raglan,
+X = go(frankfurt, singapore, byPlane, go(singapore, auckland, byPlane, go(auckland, hamilton, byCar, go(hamilton, raglan, byCar)))) ;
+false.
+
+10 ?- travel(Y, losAngeles, X).
+Y = paris,
+X = go(paris, losAngeles, byPlane) ;
+
+Y = valmont,
+X = go(valmont, saarbruecken, byCar, go(saarbruecken, paris, byTrain, go(paris, losAngeles, byPlane))) ;
+
+Y = valmont,
+X = go(valmont, metz, byCar, go(metz, paris, byTrain, go(paris, losAngeles, byPlane))) ;
+
+Y = metz,
+X = go(metz, paris, byTrain, go(paris, losAngeles, byPlane)) ;
+
+Y = saarbruecken,
+X = go(saarbruecken, paris, byTrain, go(paris, losAngeles, byPlane)) ;
+false.
+
+
+
+
+
+
+
+
